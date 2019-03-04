@@ -9,19 +9,29 @@ number to divide by (check). If check divides evenly into num, tell that to the
 user. If not, print a different appropriate message.
 """
 
-input_number = int(input('Enter a number:'))
+def oneNumber():
+	input_number = int(input('Enter a number:'))
+	
+	if (input_number % 2 == 0):
+		message = "The number is divisible by two"
 
-if (input_number % 2 == 0):
-    print("How does an even odd number react differently when divided by 2?")
-    if (input_number % 4 == 0):
-        print("And when divided by 4?")
-else:
-    print("The number is either divisible by 4 nor 2")
+		if (input_number % 4 == 0):
+			message = message + " and by four"
 
-num = int(input("Enter another number: "))
-check =  int(input("Enter the divider of that number: "))
+	return message
 
-if (num % check == 0):
-    print("The first number is divisible by the second one")
-else:
-    print("The first number is not divisible by the second one")
+def twoNumbers():
+	num = int(input("Enter another number: "))
+	check =  int(input("Enter the divider of that number: "))
+
+	if (num % check == 0):
+		message = "The first number is divisible by the second one"
+	else:
+		message = "The first number is not divisible by the second one"
+	return message
+
+result_one = oneNumber()
+print(result_one)
+
+result_two = twoNumbers()
+print(result_two)
