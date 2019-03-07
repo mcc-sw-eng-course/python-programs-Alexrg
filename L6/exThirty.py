@@ -13,14 +13,22 @@ list_length = len(list)
 def get_time_consumed(data):
 	start_time = datetime.time(datetime.now())
 	call_pivot_function = choose_pivot_number(list)
-	call_quick_sort_function = quick_sort(data, call_pivot_function, list_length)
+	call_quick_sort_function = quick_sort(data, call_pivot_function, list_length-2)
 	end_time = datetime.time(datetime.now())
+
+	start_time = start_time.strftime("%H:%M:%S")
+	end_time = end_time.strftime("%H:%M:%S")
+
+	#time_consumed = int(end_time) - int(start_time)
 
 	print("Start time: {}".format(start_time))
 	print("End time: {}".format(end_time))
 
 	return  start_time, end_time
+	#return  time_consumed
 
 time_performance = get_time_consumed(list)
-print("Time consumed in the function: {}".format(time_performance))
+
+print("Start time: {} - End time: {}".format(time_performance[0],time_performance[1]))
+#print("Time consumed in the function: {}".format(time_performance))
 
