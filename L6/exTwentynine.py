@@ -8,15 +8,17 @@ error codes for situations where there may be special errors
 """
 
 # La lista que se odernará
-list = [0, 4, 5, 3, 9, 35, 6, 7, 1, 1, 100, 3]
+list = [0, 4, 5, 103, 98, 35, 86, 7, 1, 1, 100, 3, 0, 45, 5, 3, 19, 35, 86, 7, 1, 1, 100, 3]
 list_length = len(list)
 new_list = []
 print(list)
+pivot_number = 0
 
 # 1. Elegir un elemento del arreglo de elementos a ordenar, al que llamaremos pivote.
-pivot_index = random.randint(0, list_length-1)
-pivot_number = list[pivot_index]
-print("pivot: {}".format(pivot_number))
+def choose_pivot_number(list):
+	pivot_index = random.randint(0, list_length-1)
+	pivot_number = list[pivot_index]
+	return pivot_number
 
 # 2. Resituar los demás elementos de la lista a cada lado del pivote, de manera que a un
 # lado queden todos los menores que él, y al otro los mayores. Los elementos iguales al
@@ -43,10 +45,10 @@ def quick_sort(list, list_length, pivot_number):
 	return new_list
 
 sort = quick_sort(list, list_length, pivot_number)
-
+print(sort)
 # 3. Repetir este proceso de forma recursiva para cada sublista mientras éstas contengan más
 # de un elemento. Una vez terminado este proceso todos los elementos estarán ordenados.
-if (new_list == list.sort()):
+if (sort == list.sort()):
 	print("La lista ya está ordenada")
 else:
 	sort = quick_sort(list, list_length, pivot_number)
