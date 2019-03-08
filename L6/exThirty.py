@@ -21,16 +21,8 @@ def get_time_consumed(data):
 
 	#time_consumed = int(end_time) - int(start_time)
 
-	print("Start time: {}".format(start_time))
-	print("End time: {}".format(end_time))
-
 	return  start_time, end_time
 	#return  time_consumed
-
-time_performance = get_time_consumed(list)
-
-print("Start time: {} - End time: {}".format(time_performance[0],time_performance[1]))
-#print("Time consumed in the function: {}".format(time_performance))
 
 def get_records_sorted(list):
 	records_sorted = 0
@@ -38,6 +30,14 @@ def get_records_sorted(list):
 		records_sorted  += 1
 
 	return records_sorted
+
+time_performance = get_time_consumed(list)
+
+start_time = time_performance[0]
+end_time = time_performance[1]
+
+print("Start time: {} - End time: {}".format(start_time,end_time))
+#print("Time consumed in the function: {}".format(time_performance))
 
 records_counted = get_records_sorted(list)
 print("Records counted: {}".format(records_counted))
